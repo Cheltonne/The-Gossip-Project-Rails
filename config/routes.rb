@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'gossip#all'
   get 'contact', to: 'contact#show'
   get 'team', to: 'team#show'
+  get 'welcome', to: 'gossip#all'
   resources :gossip do 
     resources :comments, only: [:create, :edit, :update, :destroy]
   end
