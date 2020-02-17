@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'welcome#index'
+  get 'welcome' to: 'welcome#index'
   get 'contact', to: 'contact#show'
   get 'team', to: 'team#show'
   resources :gossip do 
