@@ -1,0 +1,2 @@
+class Jake < ApplicationRecord
+end

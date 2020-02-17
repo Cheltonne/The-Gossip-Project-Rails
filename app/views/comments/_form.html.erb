@@ -1,0 +1,8 @@
+<%= form_tag gossip_comments_path(@gossip), method: "post" do %>
+  <%= label_tag 'Commentaire' %>
+  <%= text_area_tag 'body' %>
+  <br />
+
+  <%= submit_tag "Commenter" %>
+
+  <% end %>

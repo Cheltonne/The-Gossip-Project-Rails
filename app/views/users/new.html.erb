@@ -1,0 +1,12 @@
+<h1>Creer un nouveau compte</h1>
+<div class="form-group">
+    <form action= <%= users_path %> method="POST">
+    <input type="hidden" name="authenticity_token" value=<%= form_authenticity_token %> >
+      <label>Comment vous appelez-vous ?</label>
+      <input type="text" class="form-control" name="user_name"/>
+      <label>Quel mot de passe desirez-vous utiliser ?</label>
+      <input type="text" class="form-control" name="password">
+      <br/>
+      <input type='submit' class="btn btn-primary" value="Creer un compte" style="margin-top: 10px;"/>
+    </form>
+  </div>

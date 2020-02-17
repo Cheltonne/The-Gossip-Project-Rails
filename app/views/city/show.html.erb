@@ -1,0 +1,7 @@
+<h1>Bienvenue sur la page de la ville de <%= @city.name %></h1>
+<p>Voici les gossips écrits par les utilisateurs de cette ville :</p>
+<% Gossip.all.each do |gossip| %>
+  <% if gossip.user.city_id == @city.id %>
+    <p><%= link_to gossip.title, gossip_path(gossip.id) %></p>
+  <% end %>
+<% end %>

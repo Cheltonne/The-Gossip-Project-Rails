@@ -1,0 +1,16 @@
+<div class="body_welcome">
+  <p>Posté par: <%= link_to @author, user_path(@gossip.user.id) %></p>
+  <h3>Titre: <%= @title %></h3>
+  <p>Le gossip :</p>
+  <p><%= @gossip.content %></p>
+  <p>Créé le: <%= @creation_date %></p>
+  <p>A: <%= link_to @gossip.user.city.name, city_path(@gossip.user.city_id) %></p>
+  <p><%= link_to "Editer le gossip", edit_gossip_path %></p>
+  <p><%= link_to "Effacer le gossip", gossip_path(@gossip.id), method: :delete, data: { confirm: 'Êtes-vous sûr.e ?' }%></p>
+  <%= render 'comments/form'%>
+  <% Comment.all.each do |comment| %>
+    <% if comment.gossip.id == @gossip.id%>
+      <p><%= comment.content %></p>
+      <%end%>
+  <%end%>
+</div>
