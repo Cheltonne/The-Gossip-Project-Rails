@@ -1,4 +1,4 @@
-class Comment < ApplicationRecord
+class Comments < ApplicationRecord
   validates :content, presence: true, length: { maximum: 200 }
   belongs_to :gossip
   belongs_to :user
